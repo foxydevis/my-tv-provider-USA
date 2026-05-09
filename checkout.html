@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout – My IPTV Provider | Secure Order</title>
+<meta name="description" content="Complete your IPTV subscription order securely. My IPTV Provider – instant activation after payment confirmation.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.myiptvprovider.com/checkout.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D4AF37;--gold-light:#F0D060;--gold-dim:#8B7320;
+  --bg-dark:#0A0A0F;--bg-card:#10101A;--bg-card2:#14141F;--bg-deep:#070709;
+  --text-primary:#F0EDE6;--text-muted:#8A8799;
+  --border:rgba(212,175,55,0.15);--border-hover:rgba(212,175,55,0.4);
+  --green:#25D366;--telegram:#229ED9;
+  /* Silver / metallic palette for Pro plan */
+  --silver:#C0C8D4;--silver-light:#E8EDF2;--silver-dim:#6B7888;
+  --silver-border:rgba(180,192,208,0.35);--silver-border-hover:rgba(200,212,224,0.6);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg-dark);color:var(--text-primary);line-height:1.6;overflow-x:hidden;min-height:100vh;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,15,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#D4AF37,#8B7320);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);letter-spacing:2px;line-height:1;}
+.logo-text span{color:var(--text-primary);}
+.nav-back{color:var(--text-muted);text-decoration:none;font-size:0.88rem;font-weight:500;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;}
+.nav-back:hover{color:var(--gold);}
+
+/* PAGE */
+.checkout-page{min-height:100vh;padding:100px 1.5rem 4rem;background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(212,175,55,0.05) 0%,transparent 60%);}
+.checkout-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;}
+
+/* PROGRESS BAR */
+.progress-bar{display:flex;align-items:center;gap:0;margin-bottom:2rem;grid-column:1/-1;}
+.step{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-weight:500;color:var(--text-muted);}
+.step.active{color:var(--gold);}
+.step.done{color:rgba(212,175,55,0.5);}
+.step-num{width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;}
+.step.active .step-num{background:var(--gold);color:#000;border-color:var(--gold);}
+.step.done .step-num{background:rgba(212,175,55,0.15);}
+.step-line{flex:1;height:1px;background:var(--border);margin:0 0.8rem;}
+
+/* PANELS */
+.main-panel{display:flex;flex-direction:column;gap:1.5rem;}
+
+/* SECTION CARD */
+.card{background:var(--bg-card);border:1px solid var(--border);padding:2rem;}
+.card-header{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
+.card-step-badge{width:28px;height:28px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--gold);flex-shrink:0;}
+.card-header h2{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1px;color:var(--text-primary);}
+.card-header p{font-size:0.82rem;color:var(--text-muted);font-weight:300;margin-top:0.1rem;}
+
+/* FORM */
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;}
+.form-group label .optional{color:rgba(138,135,153,0.6);font-weight:400;letter-spacing:0;text-transform:none;font-size:0.72rem;}
+.form-group input,.form-group select{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:3px;padding:0.85rem 1rem;color:var(--text-primary);font-family:'Outfit',sans-serif;font-size:0.9rem;transition:border-color 0.2s;outline:none;-webkit-appearance:none;}
+.form-group input:focus,.form-group select:focus{border-color:var(--border-hover);background:rgba(255,255,255,0.06);}
+.form-group input::placeholder{color:var(--text-muted);opacity:0.6;}
+.form-group select option{background:#0A0A0F;color:var(--text-primary);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.field-hint{font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem;font-weight:300;}
+
+/* SUBMIT BTN */
+.btn-submit{width:100%;background:linear-gradient(135deg,#C9A227,var(--gold-light));color:#000;border:none;padding:1rem;border-radius:3px;font-weight:700;font-size:1rem;cursor:pointer;transition:all 0.2s;font-family:'Outfit',sans-serif;letter-spacing:0.5px;margin-top:0.5rem;box-shadow:0 4px 20px rgba(212,175,55,0.25);}
+.btn-submit:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(212,175,55,0.35);}
+
+/* PAYMENT OPTIONS */
+#paymentSection{display:none;}
+.payment-tabs{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1.5rem;}
+.pay-tab{flex:1;padding:0.9rem;text-align:center;cursor:pointer;background:var(--bg-card);font-size:0.85rem;font-weight:500;color:var(--text-muted);transition:all 0.2s;border:none;font-family:'Outfit',sans-serif;}
+.pay-tab:hover{background:var(--bg-card2);color:var(--text-primary);}
+.pay-tab.active{background:rgba(212,175,55,0.1);color:var(--gold);border-bottom:2px solid var(--gold);}
+.pay-tab-icon{font-size:1.1rem;display:block;margin-bottom:0.3rem;}
+
+/* CRYPTO PANEL */
+.crypto-panel,.paypal-panel{display:none;}
+.crypto-panel.active,.paypal-panel.active{display:block;}
+
+.crypto-networks{display:flex;flex-direction:column;gap:1rem;}
+.network-card{background:var(--bg-card2);border:1px solid var(--border);padding:1.5rem;border-radius:2px;transition:border-color 0.2s;}
+.network-card:hover{border-color:var(--border-hover);}
+.network-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.network-name{display:flex;align-items:center;gap:0.6rem;}
+.network-badge{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:2px;}
+.badge-sol{background:rgba(153,69,255,0.15);color:#9945FF;border:1px solid rgba(153,69,255,0.3);}
+.badge-trc{background:rgba(255,0,0,0.1);color:#FF4444;border:1px solid rgba(255,0,0,0.2);}
+.badge-base{background:rgba(0,82,255,0.12);color:#0052FF;border:1px solid rgba(0,82,255,0.25);}
+.coin-label{font-size:0.9rem;font-weight:600;color:var(--text-primary);}
+
+.wallet-box{background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:3px;padding:0.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:0.8rem;margin-bottom:0.8rem;}
+.wallet-addr{font-size:0.75rem;color:var(--gold);font-family:monospace;word-break:break-all;line-height:1.5;flex:1;}
+.copy-btn{background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);color:var(--gold);padding:0.4rem 0.8rem;border-radius:2px;font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap;font-family:'Outfit',sans-serif;}
+.copy-btn:hover{background:rgba(212,175,55,0.2);}
+.copy-btn.copied{background:rgba(37,211,102,0.15);border-color:rgba(37,211,102,0.3);color:#25D366;}
+
+.qr-placeholder{border:1px dashed rgba(212,175,55,0.25);padding:1.5rem;text-align:center;border-radius:3px;background:rgba(212,175,55,0.03);}
+.qr-placeholder p{font-size:0.78rem;color:var(--text-muted);font-weight:300;margin-top:0.5rem;}
+
+.crypto-notice{background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.2);padding:1rem 1.2rem;border-radius:3px;margin-top:1rem;}
+.crypto-notice p{font-size:0.82rem;color:var(--text-muted);font-weight:300;line-height:1.6;}
+.crypto-notice strong{color:var(--gold);}
+
+/* CONFIRM BTN */
+.btn-confirm{width:100%;background:var(--gold);color:#000;border:none;padding:1rem;border-radius:3px;font-weight:700;font-size:1rem;cursor:pointer;transition:all 0.2s;font-family:'Outfit',sans-serif;margin-top:1.2rem;letter-spacing:0.5px;}
+.btn-confirm:hover{background:var(--gold-light);transform:translateY(-1px);}
+
+/* PAYPAL PANEL */
+.paypal-info{background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.15);padding:1.5rem;border-radius:3px;margin-bottom:1.5rem;}
+.paypal-info h4{font-size:0.9rem;font-weight:600;margin-bottom:0.5rem;color:var(--text-primary);}
+.paypal-info p{font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.7;}
+.paypal-info strong{color:var(--gold);}
+.paypal-warning{background:rgba(255,165,0,0.06);border:1px solid rgba(255,165,0,0.2);padding:1rem 1.2rem;border-radius:3px;margin-bottom:1.5rem;}
+.paypal-warning p{font-size:0.82rem;color:#FFA500;font-weight:300;line-height:1.6;}
+.paypal-btns{display:flex;flex-direction:column;gap:0.8rem;}
+.btn-whatsapp{display:flex;align-items:center;justify-content:center;gap:0.7rem;background:#25D366;color:#fff;padding:0.9rem;border-radius:3px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s;}
+.btn-whatsapp:hover{background:#20ba58;transform:translateY(-1px);}
+.btn-telegram-pay{display:flex;align-items:center;justify-content:center;gap:0.7rem;background:#229ED9;color:#fff;padding:0.9rem;border-radius:3px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s;}
+.btn-telegram-pay:hover{background:#1a8cbf;transform:translateY(-1px);}
+
+/* CONFIRMATION MESSAGE */
+#confirmationMsg{display:none;background:linear-gradient(135deg,rgba(37,211,102,0.08),rgba(37,211,102,0.04));border:1px solid rgba(37,211,102,0.3);padding:2rem;border-radius:3px;text-align:center;margin-top:1.2rem;}
+.confirm-icon{font-size:2.5rem;margin-bottom:1rem;}
+#confirmationMsg h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;color:#25D366;margin-bottom:0.8rem;}
+#confirmationMsg p{font-size:0.9rem;color:var(--text-muted);font-weight:300;line-height:1.8;max-width:480px;margin:0 auto;}
+
+/* ORDER SUMMARY (sidebar) */
+.order-summary{background:var(--bg-card);border:1px solid var(--border);padding:1.8rem;position:sticky;top:90px;}
+.summary-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:1px;margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);color:var(--gold);}
+.plan-display{background:linear-gradient(145deg,#0F0E05,#1A1600);border:1px solid var(--gold);padding:1.2rem;border-radius:3px;margin-bottom:1.2rem;}
+.plan-display .plan-type{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(212,175,55,0.6);font-weight:600;margin-bottom:0.3rem;}
+.plan-display .plan-name-display{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);letter-spacing:1px;line-height:1;}
+.plan-display .plan-duration{font-size:0.82rem;color:var(--text-muted);margin-top:0.3rem;font-weight:300;}
+.plan-display .plan-price-display{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--text-primary);margin-top:0.8rem;line-height:1;}
+.plan-display .plan-price-display span{font-size:1rem;color:var(--gold);}
+
+/* Pro plan — silver / metallic override */
+.plan-display.pro-plan{
+  background:linear-gradient(145deg,#0D0F12 0%,#161C22 50%,#0D0F12 100%);
+  border:1px solid var(--silver-border);
+  box-shadow:0 0 40px rgba(180,192,208,0.08),inset 0 0 60px rgba(180,192,208,0.03);
+  position:relative;
+  overflow:hidden;
+}
+.plan-display.pro-plan::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(192,200,212,0.09) 0%,transparent 45%,rgba(192,200,212,0.04) 100%);
+  pointer-events:none;
+}
+.plan-display.pro-plan::after{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:160px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--silver),transparent);
+}
+.plan-display.pro-plan .plan-type{color:rgba(192,200,212,0.55);}
+.plan-display.pro-plan .plan-name-display{
+  color:var(--silver-light);
+  text-shadow:0 0 24px rgba(192,200,212,0.2);
+}
+.plan-display.pro-plan .plan-duration{color:var(--silver-dim);}
+.plan-display.pro-plan .plan-price-display{color:var(--text-primary);}
+.plan-display.pro-plan .plan-price-display span{color:var(--silver);}
+
+/* Pro plan sidebar: silver summary-features checks & dividers */
+.order-summary.pro-summary .summary-title{color:var(--silver-light);}
+.order-summary.pro-summary .sf-check{color:var(--silver);}
+.order-summary.pro-summary .summary-features li{border-bottom-color:rgba(192,200,212,0.07);}
+.order-summary.pro-summary .trust-icon{color:var(--silver);}
+.order-summary.pro-summary .trust-row{border-top-color:rgba(192,200,212,0.15);}
+
+.summary-features{list-style:none;margin-bottom:1.2rem;}
+.summary-features li{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04);font-weight:300;}
+.summary-features li:last-child{border-bottom:none;}
+.sf-check{color:var(--gold);font-size:0.75rem;flex-shrink:0;}
+
+.trust-row{display:flex;flex-direction:column;gap:0.6rem;padding-top:1rem;border-top:1px solid var(--border);}
+.trust-item{display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;color:var(--text-muted);font-weight:300;}
+.trust-icon{color:var(--gold);font-size:0.9rem;flex-shrink:0;}
+
+/* CUSTOMER SUMMARY BOX */
+.customer-summary{background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.15);padding:1rem 1.2rem;border-radius:3px;margin-bottom:1.2rem;display:none;}
+.customer-summary h4{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.7rem;}
+.customer-summary p{font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.6;}
+.customer-summary strong{color:var(--text-primary);}
+.edit-link{color:var(--gold);font-size:0.78rem;cursor:pointer;text-decoration:underline;display:inline-block;margin-top:0.5rem;}
+.edit-link:hover{color:var(--gold-light);}
+
+footer{background:var(--bg-deep);border-top:1px solid var(--border);padding:2rem;margin-top:3rem;}
+.footer-mini{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-mini p{font-size:0.78rem;color:var(--text-muted);}
+.footer-mini a{color:var(--text-muted);text-decoration:none;font-size:0.78rem;transition:color 0.2s;}
+.footer-mini a:hover{color:var(--gold);}
+.footer-links{display:flex;gap:1.5rem;}
+
+@media(max-width:768px){
+  .checkout-wrap{grid-template-columns:1fr;}
+  .order-summary{position:static;order:-1;}
+  .form-row{grid-template-columns:1fr;}
+  .progress-bar{overflow-x:auto;padding-bottom:0.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">&#127909;</div>
+    <div class="logo-text">MY IPTV <span>PROVIDER</span></div>
+  </a>
+  <a href="pricing.html" class="nav-back">&#8592; Back to Plans</a>
+</nav>
+
+<div class="checkout-page">
+  <div class="checkout-wrap">
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar" id="progressBar">
+      <div class="step active" id="step1badge">
+        <div class="step-num">1</div>
+        <span>Your Information</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step2badge">
+        <div class="step-num">2</div>
+        <span>Payment</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step3badge">
+        <div class="step-num">3</div>
+        <span>Confirmation</span>
+      </div>
+    </div>
+
+    <!-- MAIN PANEL -->
+    <div class="main-panel">
+
+      <!-- STEP 1: INFORMATION FORM -->
+      <div class="card" id="infoSection">
+        <div class="card-header">
+          <div class="card-step-badge">1</div>
+          <div>
+            <h2>Your Information</h2>
+            <p>We need this to deliver your subscription credentials</p>
+          </div>
+        </div>
+
+        <form id="checkoutForm" action="https://formspree.io/f/mpqbjrad" method="POST">
+          <!-- Hidden fields for plan data -->
+          <input type="hidden" name="plan_name" id="hidden_plan">
+          <input type="hidden" name="plan_duration" id="hidden_duration">
+          <input type="hidden" name="plan_price" id="hidden_price">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="full_name" id="fullName" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label>Country</label>
+              <select name="country" id="country" required>
+                <option value="">Select your country</option>
+                <option value="US">🇺🇸 United States</option>
+                <option value="CA">🇨🇦 Canada</option>
+                <option value="GB">🇬🇧 United Kingdom</option>
+                <option value="AU">🇦🇺 Australia</option>
+                <option value="DE">🇩🇪 Germany</option>
+                <option value="FR">🇫🇷 France</option>
+                <option value="ES">🇪🇸 Spain</option>
+                <option value="IT">🇮🇹 Italy</option>
+                <option value="NL">🇳🇱 Netherlands</option>
+                <option value="BE">🇧🇪 Belgium</option>
+                <option value="MA">🇲🇦 Morocco</option>
+                <option value="DZ">🇩🇿 Algeria</option>
+                <option value="TN">🇹🇳 Tunisia</option>
+                <option value="SA">🇸🇦 Saudi Arabia</option>
+                <option value="AE">🇦🇪 UAE</option>
+                <option value="OTHER">🌍 Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" id="emailAddr" placeholder="your@email.com" required>
+            <div class="field-hint">Your subscription credentials will be delivered to this email</div>
+          </div>
+
+          <div class="form-group">
+            <label>WhatsApp / Telegram <span class="optional">(Optional but recommended)</span></label>
+            <input type="text" name="whatsapp_telegram" id="contactHandle" placeholder="+1 234 567 8900 or @yourusername">
+            <div class="field-hint">Allows us to send your credentials faster and provide support</div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="proceedBtn">
+            Continue to Payment &nbsp;&#8594;
+          </button>
+        </form>
+      </div>
+
+      <!-- STEP 2: PAYMENT -->
+      <div class="card" id="paymentSection">
+        <div class="card-header">
+          <div class="card-step-badge">2</div>
+          <div>
+            <h2>Select Payment Method</h2>
+            <p>Choose your preferred payment option below</p>
+          </div>
+        </div>
+
+        <!-- Customer summary -->
+        <div class="customer-summary" id="customerSummary">
+          <h4>Ordering as</h4>
+          <p><strong id="summaryName">—</strong> &nbsp;·&nbsp; <span id="summaryEmail">—</span></p>
+          <span class="edit-link" onclick="goBackToForm()">&#9998; Edit information</span>
+        </div>
+
+        <!-- PAYMENT TABS -->
+        <div class="payment-tabs">
+          <button class="pay-tab active" onclick="switchTab('crypto')" id="tab-crypto">
+            <span class="pay-tab-icon">&#8383;</span>
+            Crypto (USDT / USDC)
+          </button>
+          <button class="pay-tab" onclick="switchTab('paypal')" id="tab-paypal">
+            <span class="pay-tab-icon">&#128179;</span>
+            PayPal F&amp;F
+          </button>
+        </div>
+
+        <!-- CRYPTO PANEL -->
+        <div class="crypto-panel active" id="cryptoPanel">
+
+          <div class="crypto-networks">
+
+            <!-- USDT SOLANA -->
+            <div class="network-card">
+              <div class="network-header">
+                <div class="network-name">
+                  <span class="coin-label">USDT</span>
+                  <span class="network-badge badge-sol">Solana Network</span>
+                </div>
+              </div>
+              <div class="wallet-box">
+                <span class="wallet-addr" id="addr-usdt-sol">Db3vbWKZodhEZ2R385M4Y6hVQCQdHYG7HfGSrAeu5nbS</span>
+                <button class="copy-btn" onclick="copyAddr('addr-usdt-sol',this)">Copy</button>
+              </div>
+              <div class="qr-placeholder">
+                <div style="font-size:2.5rem;">&#9638;</div>
+                <p>QR code — add your QR image here</p>
+              </div>
+            </div>
+
+            <!-- USDT TRC20 -->
+            <div class="network-card">
+              <div class="network-header">
+                <div class="network-name">
+                  <span class="coin-label">USDT</span>
+                  <span class="network-badge badge-trc">TRC-20 Network</span>
+                </div>
+              </div>
+              <div class="wallet-box">
+                <span class="wallet-addr" id="addr-usdt-trc">TXQs9odvKiBCdPXE5qEpj4g1tXU1GG4hbS</span>
+                <button class="copy-btn" onclick="copyAddr('addr-usdt-trc',this)">Copy</button>
+              </div>
+              <div class="qr-placeholder">
+                <div style="font-size:2.5rem;">&#9638;</div>
+                <p>QR code — add your QR image here</p>
+              </div>
+            </div>
+
+            <!-- USDC SOLANA -->
+            <div class="network-card">
+              <div class="network-header">
+                <div class="network-name">
+                  <span class="coin-label">USDC</span>
+                  <span class="network-badge badge-sol">Solana Network</span>
+                </div>
+              </div>
+              <div class="wallet-box">
+                <span class="wallet-addr" id="addr-usdc-sol">Db3vbWKZodhEZ2R385M4Y6hVQCQdHYG7HfGSrAeu5nbS</span>
+                <button class="copy-btn" onclick="copyAddr('addr-usdc-sol',this)">Copy</button>
+              </div>
+              <div class="qr-placeholder">
+                <div style="font-size:2.5rem;">&#9638;</div>
+                <p>QR code — add your QR image here</p>
+              </div>
+            </div>
+
+            <!-- USDC BASE -->
+            <div class="network-card">
+              <div class="network-header">
+                <div class="network-name">
+                  <span class="coin-label">USDC</span>
+                  <span class="network-badge badge-base">Base Network</span>
+                </div>
+              </div>
+              <div class="wallet-box">
+                <span class="wallet-addr" id="addr-usdc-base">0x1204f9032A7b07e933A1432d97e7a281ae7705a5</span>
+                <button class="copy-btn" onclick="copyAddr('addr-usdc-base',this)">Copy</button>
+              </div>
+              <div class="qr-placeholder">
+                <div style="font-size:2.5rem;">&#9638;</div>
+                <p>QR code — add your QR image here</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="crypto-notice">
+            <p>&#9888;&nbsp; <strong>Important:</strong> Send the <strong>exact amount</strong> shown in your order summary. Always double-check the network before sending — sending to the wrong network will result in permanent loss of funds.</p>
+          </div>
+
+          <!-- CONFIRM PAYMENT BUTTON -->
+          <button class="btn-confirm" onclick="confirmPayment()" id="confirmBtn">
+            &#10003;&nbsp; I Have Sent the Payment — Confirm
+          </button>
+
+          <!-- CONFIRMATION MESSAGE -->
+          <div id="confirmationMsg">
+            <div class="confirm-icon">&#10003;</div>
+            <h3>Payment Received!</h3>
+            <p>Thank you! Your transaction is being verified on the blockchain. Your subscription credentials will be sent to your email and WhatsApp shortly after confirmation.</p>
+          </div>
+        </div>
+
+        <!-- PAYPAL PANEL -->
+        <div class="paypal-panel" id="paypalPanel">
+          <div class="paypal-info">
+            <h4>&#128179; PayPal Friends &amp; Family</h4>
+            <p>To protect our account from unauthorized transactions, we do not display our PayPal details publicly. Please request them directly via <strong>WhatsApp</strong> or <strong>Telegram</strong> and our team will respond within minutes with payment instructions.</p>
+          </div>
+          <div class="paypal-warning">
+            <p>&#9888;&nbsp; <strong>Important:</strong> When sending payment, always select <strong>"Friends &amp; Family"</strong> — never "Goods &amp; Services". Using the wrong option will result in your payment being returned.</p>
+          </div>
+          <div class="paypal-btns">
+            <a href="https://wa.me/212706467621?text=Hi!%20I%20would%20like%20to%20pay%20via%20PayPal%20F%26F%20for%20my%20IPTV%20subscription.%20Please%20send%20me%20your%20PayPal%20details." target="_blank" class="btn-whatsapp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Request PayPal Details via WhatsApp
+            </a>
+            <a href="https://t.me/anbieterr?text=Hi!%20I%20would%20like%20to%20pay%20via%20PayPal%20F%26F%20for%20my%20IPTV%20subscription.%20Please%20send%20me%20your%20PayPal%20details." target="_blank" class="btn-telegram-pay">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              Request PayPal Details via Telegram
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ORDER SUMMARY SIDEBAR -->
+    <div class="order-summary">
+      <div class="summary-title">&#9733; Order Summary</div>
+
+      <div class="plan-display" id="planDisplay">
+        <div class="plan-type">Selected Plan</div>
+        <div class="plan-name-display" id="summaryPlanName">Premium Plan</div>
+        <div class="plan-duration" id="summaryDuration">1 Month</div>
+        <div class="plan-price-display"><span>$</span><span id="summaryPrice">18</span></div>
+      </div>
+
+      <ul class="summary-features" id="summaryFeatures">
+        <!-- Populated by JS -->
+      </ul>
+
+      <div class="trust-row">
+        <div class="trust-item"><span class="trust-icon">&#9889;</span> Instant activation after payment</div>
+        <div class="trust-item"><span class="trust-icon">&#128737;</span> 7-day money-back guarantee</div>
+        <div class="trust-item"><span class="trust-icon">&#128276;</span> 24/7 customer support</div>
+        <div class="trust-item"><span class="trust-icon">&#128274;</span> Secure &amp; private checkout</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-mini">
+    <p>&copy; 2025 My IPTV Provider. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Support</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── PLAN DATA ───────────────────────────────────────────────
+const planData = {
+  pro: {
+    name: 'Pro Plan',
+    features: ['20,000+ HD Channels','HD Picture Quality','VOD – Standard Library','EPG TV Guide','1 Simultaneous Connection','All Devices & Apps','Standard Support','Instant Activation'],
+    prices: { '1m': 12, '3m': 37, '6m': 57, '1y': 69 },
+    durations: { '1m': '1 Month', '3m': '3 Months', '6m': '6 Months', '1y': '1 Year' }
+  },
+  premium: {
+    name: 'Premium Plan',
+    features: ['80,000+ Channels (4K/UHD/HD)','4K Ultra HD Quality','VOD – Massive Library','Catch-Up TV Included','EPG TV Guide','1 Simultaneous Connection','All Devices & Apps','24/7 Priority Support','Instant Activation'],
+    prices: { '1m': 18, '3m': 47, '6m': 68, '1y': 99 },
+    durations: { '1m': '1 Month', '3m': '3 Months', '6m': '6 Months', '1y': '1 Year' }
+  }
+};
+
+// ─── READ URL PARAMS ─────────────────────────────────────────
+function getParams() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    plan: p.get('plan') || 'premium',
+    duration: p.get('duration') || '1m'
+  };
+}
+
+function loadPlan() {
+  const { plan, duration } = getParams();
+  const pd = planData[plan] || planData.premium;
+  const price = pd.prices[duration] || pd.prices['1m'];
+  const dur = pd.durations[duration] || pd.durations['1m'];
+
+  document.getElementById('summaryPlanName').textContent = pd.name;
+  document.getElementById('summaryDuration').textContent = dur;
+  document.getElementById('summaryPrice').textContent = price;
+
+  // Hidden form fields
+  document.getElementById('hidden_plan').value = pd.name;
+  document.getElementById('hidden_duration').value = dur;
+  document.getElementById('hidden_price').value = '$' + price;
+
+  // Apply silver (Pro) or gold (Premium) visual theme
+  const planDisplay = document.getElementById('planDisplay');
+  const orderSummary = document.querySelector('.order-summary');
+  if (plan === 'pro') {
+    planDisplay.classList.add('pro-plan');
+    orderSummary.classList.add('pro-summary');
+  } else {
+    planDisplay.classList.remove('pro-plan');
+    orderSummary.classList.remove('pro-summary');
+  }
+
+  // Features list
+  const ul = document.getElementById('summaryFeatures');
+  ul.innerHTML = pd.features.map(f => `<li><span class="sf-check">&#10003;</span>${f}</li>`).join('');
+
+  // Update WhatsApp/Telegram message with plan info
+  const msg = encodeURIComponent(`Hi! I would like to pay via PayPal F&F for the ${pd.name} (${dur} — $${price}). Please send me your PayPal details.`);
+  document.querySelector('.btn-whatsapp').href = `https://wa.me/212706467621?text=${msg}`;
+  document.querySelector('.btn-telegram-pay').href = `https://t.me/anbieterr?text=${msg}`;
+}
+
+// ─── FORM SUBMISSION (Formspree AJAX) ────────────────────────
+document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('emailAddr').value.trim();
+
+  if (!name || !email) { alert('Please fill in all required fields.'); return; }
+
+  const btn = document.getElementById('proceedBtn');
+  btn.textContent = 'Processing...';
+  btn.disabled = true;
+
+  const formData = new FormData(this);
+
+  fetch('https://formspree.io/f/mpqbjrad', {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      showPayment(name, email);
+    } else {
+      // Still proceed even if formspree has an issue
+      showPayment(name, email);
+    }
+  })
+  .catch(() => {
+    // Proceed regardless
+    showPayment(name, email);
+  });
+});
+
+function showPayment(name, email) {
+  // Hide form
+  document.getElementById('infoSection').style.display = 'none';
+
+  // Show customer summary
+  document.getElementById('summaryName').textContent = name;
+  document.getElementById('summaryEmail').textContent = email;
+  document.getElementById('customerSummary').style.display = 'block';
+
+  // Show payment
+  document.getElementById('paymentSection').style.display = 'block';
+
+  // Update progress
+  document.getElementById('step1badge').classList.remove('active');
+  document.getElementById('step1badge').classList.add('done');
+  document.getElementById('step2badge').classList.add('active');
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goBackToForm() {
+  document.getElementById('infoSection').style.display = 'block';
+  document.getElementById('paymentSection').style.display = 'none';
+  document.getElementById('customerSummary').style.display = 'none';
+  document.getElementById('step1badge').classList.add('active');
+  document.getElementById('step1badge').classList.remove('done');
+  document.getElementById('step2badge').classList.remove('active');
+  const btn = document.getElementById('proceedBtn');
+  btn.textContent = 'Continue to Payment →';
+  btn.disabled = false;
+}
+
+// ─── PAYMENT TAB SWITCH ──────────────────────────────────────
+function switchTab(tab) {
+  document.getElementById('cryptoPanel').classList.toggle('active', tab === 'crypto');
+  document.getElementById('paypalPanel').classList.toggle('active', tab === 'paypal');
+  document.getElementById('tab-crypto').classList.toggle('active', tab === 'crypto');
+  document.getElementById('tab-paypal').classList.toggle('active', tab === 'paypal');
+}
+
+// ─── COPY ADDRESS ────────────────────────────────────────────
+function copyAddr(id, btn) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    // Fallback
+    const el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// ─── CONFIRM CRYPTO PAYMENT ──────────────────────────────────
+function confirmPayment() {
+  document.getElementById('confirmBtn').style.display = 'none';
+  document.getElementById('confirmationMsg').style.display = 'block';
+
+  // Update progress step
+  document.getElementById('step2badge').classList.remove('active');
+  document.getElementById('step2badge').classList.add('done');
+  document.getElementById('step3badge').classList.add('active');
+
+  window.scrollTo({ top: document.getElementById('confirmationMsg').offsetTop - 100, behavior: 'smooth' });
+}
+
+// ─── INIT ─────────────────────────────────────────────────────
+loadPlan();
+</script>
+</body>
+</html>
