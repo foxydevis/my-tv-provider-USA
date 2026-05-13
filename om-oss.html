@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Oss – NorgeIPTV4K | Beste IPTV Tjeneste Norge</title>
+<meta name="description" content="Lær om NorgeIPTV4K — Norges beste IPTV-tjeneste med 80 000+ kanaler i 4K, nordisk innhold, og 24/7 support. Vi er dedikert til det beste Nordic IPTV.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.norgeiptv4k.pro/om-oss">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ice:#B8D4E8;--ice-light:#D6EAF8;--ice-dim:#5A7A9A;--nord:#0C1E35;--nord-card:#0F2540;--nord-card2:#142B4A;--aurora:#00C896;--text-primary:#EEF4FA;--text-muted:#7A9AB8;--border:rgba(184,212,232,0.12);--border-hover:rgba(184,212,232,0.35);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--nord);color:var(--text-primary);line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(12,30,53,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--ice),var(--ice-dim));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--ice-light);letter-spacing:2px;line-height:1;}
+.logo-text span{color:var(--aurora);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--ice-light);}
+.nav-cta{background:var(--aurora);color:#000!important;padding:0.5rem 1.2rem;border-radius:4px;font-weight:700!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);}
+.page-hero{position:relative;padding:8rem 2rem 5rem;text-align:center;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;background-image:url('norgeIPTV-filmerVODHjemmeKino.webp');background-size:cover;background-position:center;filter:brightness(0.15);}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,30,53,0.4) 0%,rgba(12,30,53,0.75) 60%,rgba(12,30,53,1) 100%);}
+.page-hero-content{position:relative;}
+.section-label{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--aurora);font-weight:700;margin-bottom:1rem;}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:2px;margin-bottom:1rem;}
+.page-sub{color:var(--text-muted);font-size:1rem;max-width:600px;margin:0 auto;font-weight:300;line-height:1.7;}
+section{padding:4rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:1px;margin-bottom:1rem;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:3rem 0;}
+.stat-box{background:var(--nord-card);padding:2rem;text-align:center;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--aurora);line-height:1;}
+.stat-label{font-size:0.78rem;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:0.3rem;}
+.story-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:4rem;}
+.story-img{border-radius:4px;overflow:hidden;aspect-ratio:16/10;position:relative;}
+.story-img img{width:100%;height:100%;object-fit:cover;}
+.story-img::after{content:'';position:absolute;inset:0;border:1px solid var(--border);}
+.story-text h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;margin-bottom:1rem;}
+.story-text p{color:var(--text-muted);font-weight:300;line-height:1.8;font-size:0.95rem;margin-bottom:1rem;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem;}
+.value-card{background:var(--nord-card);padding:1.8rem;transition:background 0.2s;}
+.value-card:hover{background:var(--nord-card2);}
+.value-icon{font-size:1.6rem;margin-bottom:0.8rem;}
+.value-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.5rem;}
+.value-card p{font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.6;}
+.support-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.support-img{border-radius:4px;overflow:hidden;aspect-ratio:16/10;position:relative;}
+.support-img img{width:100%;height:100%;object-fit:cover;}
+.support-img::after{content:'';position:absolute;inset:0;border:1px solid var(--border);}
+.support-channels{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;}
+.support-channel{display:flex;align-items:center;gap:1rem;background:var(--nord-card);border:1px solid var(--border);padding:1rem 1.2rem;border-radius:4px;text-decoration:none;transition:border-color 0.2s;}
+.support-channel:hover{border-color:var(--aurora);}
+.sc-icon{font-size:1.4rem;flex-shrink:0;}
+.sc-text h4{font-size:0.88rem;font-weight:600;color:var(--text-primary);}
+.sc-text p{font-size:0.78rem;color:var(--text-muted);font-weight:300;}
+.btn-primary{background:var(--aurora);color:#000;padding:0.9rem 2.5rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-primary:hover{background:#00e6aa;}
+footer{background:#060F1C;border-top:1px solid var(--border);padding:3rem 2rem 2rem;}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);}
+.footer-brand p{font-size:0.9rem;color:var(--text-muted);font-weight:300;margin-top:1rem;line-height:1.7;max-width:280px;}
+.footer-col h4{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--aurora);font-weight:700;margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.7rem;}
+.footer-col ul li a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:300;transition:color 0.2s;}
+.footer-col ul li a:hover{color:var(--aurora);}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{font-size:0.8rem;color:var(--text-muted);}
+.whatsapp-float{position:fixed;bottom:2rem;right:2rem;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform 0.2s;}
+.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float svg{width:28px;height:28px;fill:white;}
+@media(max-width:900px){.story-wrap,.support-wrap{grid-template-columns:1fr;}.values-grid{grid-template-columns:1fr 1fr;}.stats-row{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.nav-links{display:none;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:var(--nord);border-bottom:1px solid var(--border);padding:1.5rem 2rem;gap:1.2rem;}.hamburger{display:flex;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.values-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><div class="logo-icon">📺</div><div class="logo-text">NORGE IPTV <span>4K</span></div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Hjem</a></li><li><a href="/priser.html">Priser</a></li><li><a href="/om-oss.html">Om Oss</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/blogg.html">Blogg</a></li><li><a href="/kontakt.html">Kontakt</a></li>
+    <li><a href="/priser.html" class="nav-cta">Kom i Gang</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Meny"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="section-label">Om Oss</div>
+    <h1 class="page-title">Beste IPTV-tjeneste i Norge</h1>
+    <p class="page-sub">NorgeIPTV4K er dedikert til å levere den mest pålitelige og høykvalitets nordisk IPTV-tjeneste til norske og skandinaviske kunder.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num">80K+</div><div class="stat-label">Live Kanaler</div></div>
+      <div class="stat-box"><div class="stat-num">4K</div><div class="stat-label">UHD-kvalitet</div></div>
+      <div class="stat-box"><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
+      <div class="stat-box"><div class="stat-num">99.9%</div><div class="stat-label">Oppetid</div></div>
+    </div>
+
+    <div class="story-wrap">
+      <div class="story-text">
+        <h2>Hvem Vi Er</h2>
+        <p>NorgeIPTV4K er en premium Nordic IPTV-tjeneste bygget spesielt for det norske og skandinaviske markedet. Vi forstår hva nordmenn vil ha — pålitelig tilgang til favorittkanaler, sport, filmer og serier uten begrensningene og de høye kostnadene ved tradisjonelt kabel-TV.</p>
+        <p>Vi tilbyr to kraftige abonnementspakker: Pro Pakke for HD-streaming og Premium Pakke for de som krever det aller beste i 4K Ultra HD-kvalitet med over 80 000 kanaler og Catch-Up TV.</p>
+        <h2 style="margin-top:1.5rem;">Vårt Oppdrag</h2>
+        <p>Oppdraget vårt er enkelt: å gi alle norske husstander tilgang til førsteklasses IPTV-streaming til en rettferdig og rimelig pris. Fra det øyeblikket du abonnerer, får du øyeblikkelig tilgang, krystallklar kvalitet og et supportteam tilgjengelig 24/7.</p>
+      </div>
+      <div class="story-img">
+        <img src="norgeIPTV-premiumLiveSportToppboks.webp" alt="Nordic IPTV set-top-boks med live sport-meny — beste iptv norge" loading="lazy">
+      </div>
+    </div>
+
+    <div class="section-label">Hvorfor Velge Oss</div>
+    <h2 class="section-title">Hva Skiller Oss Fra Mengden</h2>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon">⚡</div><h3>Øyeblikkelig Oppsett</h3><p>Ingen ventetid, ingen teknisk oppsett nødvendig. Aktiver abonnementet øyeblikkelig og start streaming innen minutter.</p></div>
+      <div class="value-card"><div class="value-icon">✨</div><h3>Null Buffering</h3><p>Serverne våre er optimalisert for norske brukere, og leverer jevn, uavbrutt 4K og HD-streaming uten hakking.</p></div>
+      <div class="value-card"><div class="value-icon">📱</div><h3>Alle Enheter</h3><p>Kompatibel med alle enheter og IPTV-apper — Smart TV, Firestick, Android, iOS, PC, MAG-boks, Roku og mer.</p></div>
+      <div class="value-card"><div class="value-icon">🏔️</div><h3>Massivt Innhold</h3><p>80 000+ kanaler, norsk og nordisk innhold, sport, filmer, serier og Catch-Up TV på Premium Pakke.</p></div>
+      <div class="value-card"><div class="value-icon">💰</div><h3>Beste Verdi</h3><p>De mest konkurransedyktige IPTV abonnement-prisene i Norge — uten å gå på kompromiss med kvalitet eller support.</p></div>
+      <div class="value-card"><div class="value-icon">🛡️</div><h3>Risikofritt</h3><p>Vi er trygge på tjenesten vår. Ikke fornøyd innen 7 dager? Vi refunderer deg fullt ut — ingen spørsmål stilt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0A1B2E;">
+  <div class="container">
+    <div class="support-wrap">
+      <div class="support-img">
+        <img src="norgeKontaktOssOgStotte.webp" alt="NorgeIPTV4K 24/7 kundestøtteteam for norsk IPTV" loading="lazy">
+      </div>
+      <div>
+        <div class="section-label">Support</div>
+        <h2 class="section-title">24/7 Kundestøtte</h2>
+        <p style="color:var(--text-muted);font-weight:300;line-height:1.8;margin-bottom:1.5rem;">Supportteamet vårt er tilgjengelig hele døgnet, hver dag hele året. Enten du trenger hjelp med oppsett, har et faktureringsspørsmål eller opplever et teknisk problem — vi er alltid her for deg.</p>
+        <div class="support-channels">
+          <a href="https://wa.me/0706467621" target="_blank" class="support-channel">
+            <div class="sc-icon">📲</div>
+            <div class="sc-text"><h4>WhatsApp</h4><p>Raskeste svar — chat med oss umiddelbart</p></div>
+          </a>
+          <a href="https://t.me/anbieterr" target="_blank" class="support-channel">
+            <div class="sc-icon">✈️</div>
+            <div class="sc-text"><h4>Telegram — @anbieterr</h4><p>Rask support via Telegram når som helst</p></div>
+          </a>
+          <a href="mailto:iptvanbieter8@gmail.com" class="support-channel">
+            <div class="sc-icon">✉️</div>
+            <div class="sc-text"><h4>E-post Support</h4><p>iptvanbieter8@gmail.com</p></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <div class="container">
+    <div class="section-label">Kom i Gang</div>
+    <h2 class="section-title">Klar til å Oppleve Beste IPTV i Norge?</h2>
+    <p style="color:var(--text-muted);font-weight:300;max-width:500px;margin:1rem auto 2.5rem;">Bli med tusenvis av fornøyde norske kunder som streamer favorittinnholdet sitt med NorgeIPTV4K.</p>
+    <a href="/priser.html" class="btn-primary">Se Alle Pakker</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="/" class="nav-logo"><div class="logo-icon">📺</div><div class="logo-text">NORGE IPTV <span>4K</span></div></a><p>Beste IPTV Norge. Stream 80 000+ kanaler i 4K og HD med øyeblikkelig aktivering og 24/7 support.</p></div>
+    <div class="footer-col"><h4>Navigasjon</h4><ul><li><a href="/">Hjem</a></li><li><a href="/priser.html">Priser</a></li><li><a href="/om-oss.html">Om Oss</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/blogg.html">Blogg</a></li><li><a href="/kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Pakker</h4><ul><li><a href="/priser.html">Pro Pakke</a></li><li><a href="/priser.html">Premium Pakke</a></li><li><a href="/priser.html">Månedlig</a></li><li><a href="/priser.html">Årsabonnement</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:iptvanbieter8@gmail.com">iptvanbieter8@gmail.com</a></li><li><a href="https://wa.me/0706467621" target="_blank">WhatsApp Support</a></li><li><a href="https://t.me/anbieterr" target="_blank">Telegram @anbieterr</a></li><li><a href="/vilkar.html">Vilkår for Bruk</a></li><li><a href="/personvern.html">Personvernregler</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 NorgeIPTV4K. Alle rettigheter forbeholdt.</p><p>Beste IPTV Tjeneste Norge</p></div>
+</footer>
+<a href="https://wa.me/0706467621" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script>document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('open');});</script>
+</body>
+</html>
